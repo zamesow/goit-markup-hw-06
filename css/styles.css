@@ -230,6 +230,8 @@ ul {
   font-size: 44px;
   line-height: 1.36;
   color: var(--primary-white-color);
+  margin-top: 0;
+  margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
   letter-spacing: 0.06em;
@@ -240,6 +242,7 @@ ul {
   display: inline-block;
   padding: 10px 32px;
   margin-top: 30px;
+  border: none;
   border-radius: 4px;
 
   font-weight: 700;
@@ -249,6 +252,87 @@ ul {
   background-color: var(--accent-color);
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* ----------- Модалка --------------------- */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop--is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop--is-hidden .modal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%) scale(1);
+
+  width: 528px;
+  height: 580px;
+  padding: 40px;
+
+  background-color: var(--primary-white-color);
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal__title {
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  margin: 0;
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+
+  background-color: transparent;
+  border: none;
+}
+
+.modal__close-icon {
+  border: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*------------ преимущества, команда, фильтр */
