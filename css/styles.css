@@ -74,6 +74,8 @@ img {
 .header-address__link:focus,
 .header-address__link:hover .address-icon,
 .header-address__link:focus .address-icon,
+.modal__form input:hover,
+.modal__close-btn:hover,
 .soc-link:focus,
 .clients__item:hover .clients__icon,
 .clients__item:focus,
@@ -81,6 +83,7 @@ button:focus,
 .filter__item:focus {
   color: var(--accent-color);
   fill: var(--accent-color);
+  --color2: var(--accent-color);
 }
 
 .soc-link:hover {
@@ -238,7 +241,8 @@ ul {
   max-width: 700px;
 }
 
-.hero__button {
+.hero__button,
+.modal__send-btn {
   display: inline-block;
   padding: 10px 32px;
   margin-top: 30px;
@@ -254,6 +258,12 @@ ul {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
+.hero__button:focus,
+.modal__send-btn:focus {
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+}
+
 /* ----------- Модалка --------------------- */
 
 .backdrop {
@@ -266,18 +276,20 @@ ul {
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
 
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: visible;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop--is-hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 
 .backdrop--is-hidden .modal {
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.8);
+  transform: translate(-50%, -50%) scale(0.1);
 }
 
 .modal {
@@ -307,7 +319,91 @@ ul {
   text-align: center;
   letter-spacing: 0.03em;
 
+  margin: 0 0 30px;
+}
+
+/* ----------- формы & span ----------------------- */
+
+.modal-item {
+  position: relative;
+}
+
+.modal-item:not(:last-child) {
+  margin-bottom: 28px;
+}
+
+.modal-item--comment {
+  height: 120px;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  resize: none;
+}
+
+.modal-item--check {
+  margin-bottom: 30px;
+}
+
+.modal__send-btn {
+  padding: 10px 55px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ----------- modal icons, inputs & labels ------------------ */
+
+.modal__input {
+  width: 100%;
+  height: 40px;
+  padding: 12px 18px 12px 42px;
   margin: 0;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: 0px;
+}
+
+.modal__label {
+  position: absolute;
+  top: 50%;
+  left: 42px;
+
+  display: inline-block;
+  transform: translateY(-50%);
+
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14px;
+  letter-spacing: 0.01em;
+
+  color: var(--primary-text-color);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* .modal__label:focus {
+  transform: translateY(-4px);
+
+  left: -16px;
+} */
+
+/* .modal-item:focus,
+.modal__label:focus {
+  fill: var(--accent-color);
+  color: var(--accent-color);
+} */
+
+.modal__box-icon {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 16px;
+
+  transform: translateY(-50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: var(--title-text-color);
+
+  pointer-events: none;
 }
 
 .modal__close-btn {
@@ -329,6 +425,7 @@ ul {
   padding: 0;
   margin: 0;
   border: none;
+  --color3: rgba(0, 0, 0, 0.1);
 
   display: flex;
   justify-content: center;
@@ -336,6 +433,7 @@ ul {
 }
 
 /*------------ преимущества, команда, фильтр */
+
 .features {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -465,7 +563,7 @@ ul {
 }
 
 .footer-soc-links__title,
-.folow__title {
+.footer-folow__title {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -756,12 +854,33 @@ ul {
 
 .footer-folow__title {
   color: var(--primary-white-color);
+  text-transform: uppercase;
+  display: block;
+  text-align: left;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.footer-folow__input {
+  width: 358px;
+
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: transparent;
+  padding: 15px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .footer-folow__button {
   display: inline-flex;
   height: 50px;
   padding: 9px 28px;
+  margin-left: 12px;
   text-decoration: none;
   align-items: center;
 
