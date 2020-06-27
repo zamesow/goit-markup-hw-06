@@ -468,16 +468,24 @@
 
         <!-- Подписка -->
 
-          <form class="footer-folow" action="">
-            <label class="footer-folow__title" for="folow">Подпишитесь на рассылку</label>
-            <input class="footer-folow__input" type="email" name="email" id="folow" placeholder="E-mail">
-            <button type="button" class="footer-folow__button">
-              Подписаться
-              <svg class="icon-send" width="24" height="24">
-                <use href="./images/sprite.svg#icon-send"></use>
-              </svg>
-            </button>
-            </form>
+        <form class="footer-folow">
+          <label class="footer-folow__title" for="folow"
+            >Подпишитесь на рассылку</label
+          >
+          <input
+            class="footer-folow__input"
+            type="email"
+            name="email"
+            id="folow"
+            placeholder="E-mail"
+          />
+          <button type="button" class="footer-folow__button">
+            Подписаться
+            <svg class="icon-send" width="24" height="24">
+              <use href="./images/sprite.svg#icon-send"></use>
+            </svg>
+          </button>
+        </form>
       </div>
       <p class="copy">2020 | Developed by GoIT Students</p>
     </footer>
@@ -485,7 +493,7 @@
     <!-- Модалка -->
 
     <div class="backdrop backdrop--is-hidden" data-modal>
-      <div class="modal">
+      <form class="modal" autocomplete="off">
         <p class="modal__title">Оставьте свои данные, мы вам перезвоним</p>
         <button class="modal__close-btn" data-modal-close>
           <svg class="modal__close-icon" width="100%" height="100%">
@@ -493,85 +501,104 @@
           </svg>
         </button>
 
-          <div class="modal-item modal-item--name">
-            <span class="modal__box-icon madal__box-icon--name">
-              <svg
-                class="modal-item-icon modal-item-icon--name"
-                width="18"
-                height="18"
-              >
-                <use href="../images/modal-sprite.svg#modal-name"></use>
-              </svg>
-            </span>
-            <input class="modal__input" type="text" name="form" id="name" />
-            <label class="modal__label modal__label--name" for="name"
-              >Имя</label
+        <div class="modal-item modal-item--name">
+          <span class="modal__box-icon madal__box-icon--name">
+            <svg
+              class="modal-item-icon modal-item-icon--name"
+              width="18"
+              height="18"
             >
-          </div>
-
-          <div class="modal-item modal-item--phone">
-            <span class="modal__box-icon madal__box-icon--phone">
-              <svg
-                class="modal-item-icon modal-item-icon--phone"
-                width="18"
-                height="18"
-              >
-                <use href="../images/modal-sprite.svg#modal-phone"></use>
-              </svg>
-            </span>
-            <label class="modal__label modal__label--phone" for="tel"
-              >Телефон</label
-            >
-            <input class="modal__input" type="tel" name="form" id="tel" />
-          </div>
-
-          <div class="modal-item modal-item--email">
-            <span class="modal__box-icon madal__box-icon--mail">
-              <svg
-                class="modal-item-icon modal-item-icon--email"
-                width="18"
-                height="18"
-              >
-                <use href="../images/modal-sprite.svg#modal-email"></use>
-              </svg>
-            </span>
-            <label class="modal__label modal__label--email" for="email"
-              >Почта</label
-            >
-            <input class="modal__input" type="email" name="form" id="email" />
-          </div>
-
-          <div class="modal-item modal-item--comment">
-            <textarea
-              class="modal-item modal-item--comment"
-              name="form"
-              id="comment"
-            ></textarea>
-            <label class="modal__label modal__label--comment" for="comment"></label>
-          </div>
-
-          <div class="modal-item modal-item--check">
-            <input
-            class="visually-hidden"
-            type="checkbox"
+              <use href="../images/modal-sprite.svg#modal-name"></use>
+            </svg>
+          </span>
+          <input
+            class="modal__input"
+            type="text"
             name="form"
-            value="check"
-            id="check"
+            id="name"
+            placeholder=" "
           />
-          <label class="modal__label modal__label--check" for="check">
+          <label class="modal__label modal__label--name" for="name">Имя</label>
+        </div>
+
+        <div class="modal-item modal-item--phone">
+          <span class="modal__box-icon madal__box-icon--phone">
+            <svg
+              class="modal-item-icon modal-item-icon--phone"
+              width="18"
+              height="18"
+            >
+              <use href="../images/modal-sprite.svg#modal-phone"></use>
+            </svg>
+          </span>
+          <input
+            class="modal__input"
+            type="tel"
+            name="form"
+            id="tel"
+            placeholder=" "
+          />
+          <label class="modal__label modal__label--phone" for="tel"
+            >Телефон</label
+          >
+        </div>
+
+        <div class="modal-item modal-item--email">
+          <span class="modal__box-icon madal__box-icon--mail">
+            <svg
+              class="modal-item-icon modal-item-icon--email"
+              width="18"
+              height="18"
+            >
+              <use href="../images/modal-sprite.svg#modal-email"></use>
+            </svg>
+          </span>
+          <input
+            class="modal__input"
+            type="email"
+            name="form"
+            id="email"
+            placeholder=" "
+          />
+          <label class="modal__label modal__label--email" for="email"
+            >Почта</label
+          >
+        </div>
+
+        <div class="modal-item modal-item--comment">
+          <textarea
+            class="modal__input modal__input--comment"
+            name="form"
+            id="comment"
+            placeholder=" "
+          ></textarea>
+          <label class="modal__label modal__label--comment" for="comment"
+            >Комментарии</label
+          >
+        </div>
+
+        <div class="modal__item-check">
+          <label class="modal__label-check">
+            <input
+              class="checkbox-hidden"
+              type="checkbox"
+              name="form"
+              value="check"
+            />
+            <span class="modal__check-icon"></span>
             <span
               >Соглашаюсь с рассылкой и принимаю
-              <a href="">
+              <a class="modal__check-link" href="">
                 Условия договора
               </a>
             </span>
           </label>
-          </div>
+        </div>
 
-          <button class="modal__send-btn" type="submit">Отправить</button>
-        </form>
-      </div>
+        <button class="modal__send-btn" type="submit">Отправить</button>
+      </form>
     </div>
+
     <script src="./js/modal.js"></script>
   </body>
 </html>

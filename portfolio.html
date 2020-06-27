@@ -353,18 +353,24 @@
 
         <!-- Подписка -->
 
-        <div class="footer-folow">
-          <p class="footer-folow__title">Подпишитесь на рассылку</p>
-          <div class="footer-folow__cont">
-            <p class="email-area">E-mail</p>
-            <button type="button" class="footer-folow__button">
-              Подписаться
-              <svg class="icon-send" width="24" height="24">
-                <use href="./images/sprite.svg#icon-send"></use>
-              </svg>
-            </button>
-          </div>
-        </div>
+        <form class="footer-folow" action="">
+          <label class="footer-folow__title" for="folow"
+            >Подпишитесь на рассылку</label
+          >
+          <input
+            class="footer-folow__input"
+            type="email"
+            name="email"
+            id="folow"
+            placeholder="E-mail"
+          />
+          <button type="button" class="footer-folow__button">
+            Подписаться
+            <svg class="icon-send" width="24" height="24">
+              <use href="./images/sprite.svg#icon-send"></use>
+            </svg>
+          </button>
+        </form>
       </div>
       <p class="copy">2020 | Developed by GoIT Students</p>
     </footer>

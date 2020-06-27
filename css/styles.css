@@ -311,6 +311,18 @@ ul {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal__close-icon {
+  border: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+  --color3: rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .modal__title {
   font-family: Roboto;
   font-weight: 700;
@@ -330,17 +342,6 @@ ul {
 
 .modal-item:not(:last-child) {
   margin-bottom: 28px;
-}
-
-.modal-item--comment {
-  height: 120px;
-  margin-bottom: 20px;
-  padding: 12px 16px;
-  resize: none;
-}
-
-.modal-item--check {
-  margin-bottom: 30px;
 }
 
 .modal__send-btn {
@@ -363,6 +364,10 @@ ul {
   outline: 0px;
 }
 
+.modal__input:focus {
+  border-color: var(--accent-color);
+}
+
 .modal__label {
   position: absolute;
   top: 50%;
@@ -381,17 +386,86 @@ ul {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* .modal__label:focus {
-  transform: translateY(-4px);
+.modal-item:focus-within .modal__label,
+.modal__input:not(:placeholder-shown) + .modal__label {
+  transform: translateX(-26px) translateY(-32px);
+}
 
-  left: -16px;
-} */
-
-/* .modal-item:focus,
-.modal__label:focus {
+.modal-item:focus-within .modal__box-icon,
+.modal-item:focus-within .modal__label {
   fill: var(--accent-color);
   color: var(--accent-color);
-} */
+}
+
+.modal-item--comment {
+  position: relative;
+  height: 120px;
+}
+
+.modal__input--comment {
+  padding: 12px 16px;
+  resize: none;
+  height: 100%;
+  margin-bottom: 0;
+}
+
+.modal__label--comment {
+  top: 20px;
+  left: 16px;
+}
+
+.modal-item--comment:focus-within .modal__label,
+.modal__input--comment:not(:placeholder-shown) + .modal__label {
+  transform: translateY(-32px);
+}
+
+.modal__item-check {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  color: var(--primary-text-color);
+}
+
+.modal__label-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-hidden:checked + .modal__check-icon {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  background-image: url(../svg-full/modal-check.svg);
+  background-size: contain;
+  background-origin: border-box;
+}
+
+.checkbox-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.modal__check-icon {
+  display: inline-block;
+  margin-right: 5px;
+  width: 15px;
+  height: 16px;
+  border: 2px solid black;
+  border-radius: 20%;
+}
+
+.modal__check-link {
+  text-decoration: underline;
+}
 
 .modal__box-icon {
   position: absolute;
@@ -418,18 +492,6 @@ ul {
 
   background-color: transparent;
   border: none;
-}
-
-.modal__close-icon {
-  border: none;
-  padding: 0;
-  margin: 0;
-  border: none;
-  --color3: rgba(0, 0, 0, 0.1);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /*------------ преимущества, команда, фильтр */
