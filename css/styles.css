@@ -391,7 +391,7 @@ ul {
   transform: translateX(-26px) translateY(-32px);
 }
 
-.modal-item:focus-within .modal__box-icon,
+.modal-item:focus-within .modal-item-icon,
 .modal-item:focus-within .modal__label {
   fill: var(--accent-color);
   color: var(--accent-color);
@@ -476,9 +476,12 @@ ul {
 
   transform: translateY(-50%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  fill: var(--title-text-color);
 
   pointer-events: none;
+}
+
+.modal-item-icon {
+  fill: var(--title-text-color);
 }
 
 .modal__close-btn {
