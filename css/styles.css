@@ -438,7 +438,7 @@ ul {
 .checkbox-hidden:checked + .modal__check-icon {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
-  background-image: url(../svg-full/modal-check.svg);
+  background-image: url(../images/modal-check.svg);
   background-size: contain;
   background-origin: border-box;
 }
